@@ -1,5 +1,6 @@
 # Project #3 - Connections Lab
-Project #3 using Node, Express, and socket.io
+### Abraiz and Dixit <br/>
+Project #3 using Node, Express, and NeDB
 
 ## Description:
 
@@ -7,7 +8,7 @@ Project #3 using Node, Express, and socket.io
 
 Each user will have an account with a username and password that they can optionally share with other people with whom they want to form a memory cube. At the beginning, the cube’s “room” would be empty and all members would have the option of adding their memory pieces to the cube. The idea here is that each person in the group would add some sort of picture that would hold meaning to each person in the group so that the final cube becomes meaningful for everyone of them. Each time a person adds a piece, it will be placed in such a way so that eventually, when enough pieces are added, the structure starts to take on the form of a cube. From then on, the more memories the group members add, the larger the cube would get. Essentially, group members will be able to create their own Memory Cube from scratch by adding pieces in this way.
 
-To make this project possible, we (Abraiz and Dixit), implemented Javascript’s **three.js** library along with HTML and CSS on the front-end, and we made use of Node, Express, and NeDB on the back-end in order to send, receive, and store the Memory Cube’s data.
+To make this project possible, we implemented Javascript’s **three.js** library along with HTML and CSS on the front-end, and we made use of Node, Express, and NeDB on the back-end in order to send, receive, and store the Memory Cube’s data.
 
 ## Inspiration:
 
@@ -38,9 +39,9 @@ We went for a minimalistic design on the main page since we did not want to dive
 
 * Wireframe for the main page:
 
-Information Flow:
+## Information Flow:
 
-The following is the ordered information flow of the NeDB implementation for the login system:
+### The following is the ordered information flow of the NeDB implementation for the login system:
 
 
 
@@ -51,24 +52,24 @@ The following is the ordered information flow of the NeDB implementation for the
     2. If it is present, the password is compared to the one stored in the database.
         1. If the password is incorrect, the server responds with a **status** of **false**.
         2. If the password is correct, the server responds with a **status** of **true**.
-4. Client checks to see if **status** is **true**, and if it is, the cube stored in the **mesh.db** and **memory.db** databases is fetched and loaded (information flow for this process is below), otherwise, the user is sent back to the homepage.
+4. Client checks to see if **status** is **true**, and if it is, the cube stored in the **mesh.db** and **memory.db** databases is fetched and loaded (information flow for this process is below), otherwise, the user is sent back to the homepage. <br/>
 
-The following is the ordered information flow of the NeDB implementation for the **cube-loading** system:
+### The following is the ordered information flow of the NeDB implementation for the **cube-loading** system:
 
 
 
 1. Client logs in to their account by entering their correct username and password.
 2. Client fetches **memory objects** (containing image strings and description texts) and **meshes** (containing positions, colors, and sizes of the BoxGeometries) from the server.
 3. Server responds with the JSON objects of memories and meshes associated with the username.
-4. Client reconstructs the latest version of the cube using the memory objects and meshes supplied by the server.
+4. Client reconstructs the latest version of the cube using the memory objects and meshes supplied by the server. <br/>
 
-The following is the ordered information flow of the NeDB implementation for the **cube-storing** system:
+### The following is the ordered information flow of the NeDB implementation for the **cube-storing** system:
 
 
 
 1. User uploads an image and adds an object to the Cube.
 2. Client sends the image data (**memoryInfo**) and and mesh data (**meshInfo**) to the server 
-3. Server inserts both the image and mesh data into their respective databases.
+3. Server inserts both the image and mesh data into their respective databases. <br/>
 
 ## Features:
 
