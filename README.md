@@ -61,12 +61,12 @@ We went for a minimalistic design on the main page since we did not want to dive
 
 1. User enters username and password in the landing page.
 2. Client sends username and password information to the server.
-3. Server checks to see if the username is already present in the **users.db**
+3. Server checks to see if the username is already present in the `users.db`
     1. If it’s not, the username and password info is added to the database.
     2. If it is present, the password is compared to the one stored in the database.
-        1. If the password is incorrect, the server responds with a **status** of **false**.
-        2. If the password is correct, the server responds with a **status** of **true**.
-4. Client checks to see if **status** is **true**, and if it is, the cube stored in the **mesh.db** and **memory.db** databases is fetched and loaded (information flow for this process is below), otherwise, the user is sent back to the homepage. <br/>
+        1. If the password is incorrect, the server responds with a `status` of `false`.
+        2. If the password is correct, the server responds with a `status` of `true`.
+4. Client checks to see if `status` is `true`, and if it is, the cube stored in the `mesh.db` and `memory.db` databases is fetched and loaded (information flow for this process is below), otherwise, the user is sent back to the homepage. <br/>
 
 ### The following is the ordered information flow of the NeDB implementation for the **cube-loading** system:
 
@@ -82,7 +82,7 @@ We went for a minimalistic design on the main page since we did not want to dive
 
 
 1. User uploads an image and adds an object to the Cube.
-2. Client sends the image data (**memoryInfo**) and and mesh data (**meshInfo**) to the server 
+2. Client sends the image data `memoryInfo` and and mesh data `meshInfo` to the server 
 3. Server inserts both the image and mesh data into their respective databases. <br/>
 
 ## Features:
@@ -122,16 +122,46 @@ We went for a minimalistic design on the main page since we did not want to dive
 
 
 * Understanding three.js itself and the things that could be done using it were a bit overwhelming.
-* Importing the three.js library and making the initial setup was more challenging than I thought it would be. I ended up using cdn to import the various modules I would use, like **{ OrbitControls } **instead of setting up three.js locally because I was getting a lot of errors that way.
-* Understanding the working behind BufferGeometry. I made the following notes as I went through this **BufferGeometry example** available on the three.js site.  **(insert picture)**
-* Restricting the positions of each individual “memory” so that they all come together inside a single larger cubic structure **(again notes picture)**
+* Importing the three.js library and making the initial setup was more challenging than I thought it would be. I ended up using cdn to import the various modules I would use, like `{ OrbitControls }` instead of setting up three.js locally because I was getting a lot of errors that way.
+* Understanding the working behind BufferGeometry. I made the following notes to understand the working behind this **BufferGeometry example** available on the three.js site. <br/><br/>
+
+<p align="center">
+  <img 
+    width="500"
+    height="600"
+    src="https://github.com/Abraiz01/cube/blob/main/public/images/triangle.jpeg"
+  >
+</p>
+
+<br/><br/>
+
+* Restricting the positions of each individual “memory” so that they all come together inside a single larger cubic structure. <br/><br/>
+
+<p align="center">
+  <img 
+    width="500"
+    height="600"
+    src="https://github.com/Abraiz01/cube/blob/main/public/images/buffernotes1.jpeg"
+  >
+</p>
+
+<p align="center">
+  <img 
+    width="500"
+    height="600"
+    src="https://github.com/Abraiz01/cube/blob/main/public/images/buffernotes2.jpeg"
+  >
+</p>
+
+<br/><br/>
+
 * Overlaying buttons and other divs on the three.js canvas was not as easy as I thought it would be, and this was causing a lot of problems with raycasting being able to properly align the cursor with the individual objects. So, this was an important issue that had to be fixed, and eventually I did this by importing the “main.css” file that every three.js example uses,  and adding my styles on top of the ones already present. 
 * Understanding and using Raycasting:
     * This was a critical feature without which we couldn’t have made interactions with the individual objects possible.
-    * Understood that Raycaster first sets up an array (**intersects**) of meshes that the pointer is intersecting with. Next, we use the mesh at index 0 in this list, which is the current mesh that the pointer is intersecting with, to compare it to the previously intersected mesh **INTERSECTED **and if they aren’t the same, the previous mesh is set back to its original color, the new mesh is assigned to **INTERSECTED**, and the new mesh is given a red color to highlight it.
+    * Understood that Raycaster first sets up an array `intersects` of meshes that the pointer is intersecting with. Next, we use the mesh at index 0 in this list, which is the current mesh that the pointer is intersecting with, to compare it to the previously intersected mesh `INTERSECTED` and if they aren’t the same, the previous mesh is set back to its original color, the new mesh is assigned to `INTERSECTED`, and the new mesh is given a red color to highlight it.
 * Sending and receiving “memory objects” to and from the server, and eventually using them to both display the current structure of the cube and store each of the pictures inside the correct “memory object” every time the user logs in to their Cube.
-    * The index of each element in the **objectlist** is perfectly aligned with its corresponding item in the **meshlist**. **(insert photo)**
-    * When the Raycaster stores the mesh the user has clicked inside the **INTERSECTED** variable, the mesh’s index is retrieved from the **meshlist** and the corresponding object is retrieved from the same index from the **objectlist**, this object stores the image string and the description which are then used to display the image and text associated with that “memory object” to the user.
+    * The index of each element in the `objectlist` is perfectly aligned with its corresponding item in the `meshlist`.
+    * When the Raycaster stores the mesh the user has clicked inside the `INTERSECTED` variable, the mesh’s index is retrieved from the `meshlist` and the corresponding object is retrieved from the same index from the `objectlist`, this object stores the image string and the description which are then used to display the image and text associated with that “memory object” to the user.
 
 ### Dixit
 
