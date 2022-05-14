@@ -2,7 +2,7 @@
 ### Abraiz and Dixit <br/>
 Project #3 using Node, Express, and NeDB <br/>
 [Memory Cube](https://materialistic-pickle-trillium.glitch.me/) <br/>
-username:admin, password: admin for a kitten-like experience 🐈
+For a kitten-like experience 🐈 : username: admin, password: admin 
 
 ## Description:
 
