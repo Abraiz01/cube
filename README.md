@@ -33,6 +33,14 @@ To make this project possible, we implemented Javascript’s **three.js** librar
 
 * Wireframe for the landing page:
 
+<p align="center">
+  <img 
+    width="450"
+    height="300"
+    src="https://https://github.com/Abraiz01/cube/blob/main/public/images/landingpage.jpeg"
+  >
+</p>
+
 We went for a minimalistic design on the main page since we did not want to diverge the main focus which was meant to be on the cube
 
 
