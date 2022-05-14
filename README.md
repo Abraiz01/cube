@@ -204,7 +204,7 @@ The initial process for me was full of struggles as I learned how to navigate th
 
 
 
-* Github for nedb
+* Github for NeDB
 
 [https://github.com/louischatriot/nedb](https://github.com/louischatriot/nedb)
 
