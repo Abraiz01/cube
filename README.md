@@ -24,8 +24,25 @@ To make this project possible, we implemented Javascript’s **three.js** librar
 
 
 
-* Initially we thought about making the cube structure using triangles. The structure would be formed using the BufferGeometry feature in three.js. However, we soon realized that it was difficult to implement Raycasting on the triangles inside the Buffer cube since the triangles weren’t mesh objects. Moreover, we realized it was a bit difficult to interact with triangles since they were 2D objects. So, we decided not to proceed with the triangles-inside-a-larger-cube idea. **Triangle emoji**
-* We also thought of a “Memory Train” idea in which the individual memories would be placed in order such that the oldest ones would be found at the back end of the Train (which would be made of cubes) and the newest ones would be added to the front of the Train. We made a rough three.js implementation of it, but due to time constraints, we decided to keep our focus on the Memory Cube idea and proceeded to complete it first.
+* Initially we thought about making the cube structure using triangles. The structure would be formed using the BufferGeometry feature in three.js. However, we soon realized that it was difficult to implement Raycasting on the triangles inside the Buffer cube since the triangles weren’t mesh objects. Moreover, we realized it was a bit difficult to interact with triangles since they were 2D objects. So, we decided not to proceed with the triangles-inside-a-larger-cube idea. **Triangle emoji** <br/><br/>
+
+<p align="center">
+  <img 
+    width="337"
+    height="303"
+    src="https://github.com/Abraiz01/cube/blob/main/public/images/trianglesCube.png"
+  >
+</p> <br/><br/>
+
+* We also thought of a “Memory Train” idea in which the individual memories would be placed in order such that the oldest ones would be found at the back end of the Train (which would be made of cubes) and the newest ones would be added to the front of the Train. We made a rough three.js implementation of it, but due to time constraints, we decided to keep our focus on the Memory Cube idea and proceeded to complete it first. <br/><br/>
+
+<p align="center">
+  <img 
+    width="312.5"
+    height="304.5"
+    src="https://github.com/Abraiz01/cube/blob/main/public/images/train.png"
+  >
+</p> <br/>
 
 ## Wireframes:
 
@@ -133,7 +150,7 @@ We went for a minimalistic design on the main page since we did not want to dive
   >
 </p>
 
-<br/><br/>
+<br/>
 
 * Restricting the positions of each individual “memory” so that they all come together inside a single larger cubic structure. <br/><br/>
 
@@ -153,7 +170,7 @@ We went for a minimalistic design on the main page since we did not want to dive
   >
 </p>
 
-<br/><br/>
+<br/>
 
 * Overlaying buttons and other divs on the three.js canvas was not as easy as I thought it would be, and this was causing a lot of problems with raycasting being able to properly align the cursor with the individual objects. So, this was an important issue that had to be fixed, and eventually I did this by importing the “main.css” file that every three.js example uses,  and adding my styles on top of the ones already present. 
 * Understanding and using Raycasting:
