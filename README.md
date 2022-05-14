@@ -24,7 +24,7 @@ To make this project possible, we implemented Javascript’s **three.js** librar
 
 
 
-* Initially we thought about making the cube structure using triangles. The structure would be formed using the BufferGeometry feature in three.js. However, we soon realized that it was difficult to implement Raycasting on the triangles inside the Buffer cube since the triangles weren’t mesh objects. Moreover, we realized it was a bit difficult to interact with triangles since they were 2D objects. So, we decided not to proceed with the triangles-inside-a-larger-cube idea. **Triangle emoji** <br/><br/>
+* Initially we thought about making the cube structure using triangles. The structure would be formed using the BufferGeometry feature in three.js. However, we soon realized that it was difficult to implement Raycasting on the triangles inside the Buffer cube since the triangles weren’t mesh objects. Moreover, we realized it was a bit difficult to interact with triangles since they were 2D objects. So, we decided not to proceed with the triangles-inside-a-larger-cube idea. 🔺 <br/><br/>
 
 <p align="center">
   <img 
@@ -198,7 +198,7 @@ The initial process for me was full of struggles as I learned how to navigate th
 * Ability to add multiple cubes at the same time, we thought this would conflict a bit with the idea behind our project which was to build a Memory Cube over time, since that would add more meaning to the structure when the user(s) revisit it. However, having this as an optional feature could invite more users to try out the cube.
 * Create account option / make group accounts so that people with different usernames can join in on the same account
     * Users can have username and password for their own account and also have a “key” which would allow them to access the group cube.
-* Sounding a bit ambitious here but, the project could possibly be transformed into a VR experience where users would be able to interact with the cube in a more life-like experience, or it could also be represented in the form of an interactive-cube hologram displaying the photos as holograms when the individual cubes are touched. Very futuristic, but we thought it would be worth mentioning **emoji**
+* Sounding a bit ambitious here but, the project could possibly be transformed into a VR experience where users would be able to interact with the cube in a more life-like experience, or it could also be represented in the form of an interactive-cube hologram displaying the photos as holograms when the individual cubes are touched. Very futuristic, but we thought it would be worth mentioning. 🤖
 
 ## References:
 
