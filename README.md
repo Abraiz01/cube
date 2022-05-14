@@ -1,26 +1,7 @@
-<!-----
+# Project #3 - Connections Lab
+Project #3 using Node, Express, and socket.io
 
-Yay, no errors, warnings, or alerts!
-
-Conversion time: 0.615 seconds.
-
-
-Using this Markdown file:
-
-1. Paste this output into your source file.
-2. See the notes and action items below regarding this conversion run.
-3. Check the rendered output (headings, lists, code blocks, tables) for proper
-   formatting and use a linkchecker before you publish this page.
-
-Conversion notes:
-
-* Docs to Markdown version 1.0β33
-* Sat May 14 2022 10:00:57 GMT-0700 (PDT)
-* Source doc: Final Project README
------>
-
-
-Description:
+## Description:
 
 “Memory Cube” is designed to be an online platform where users can upload their photos or “memories” and form a personalized, aesthetic cube-like structure out of those memories over time. The more memories a user adds, the denser the cube becomes. Each individual memory is represented in the form of a smaller box-like object and together, these individual boxes evolve into a larger cube which would eventually store hundreds, or even thousands of moments from the user’s life. 
 
@@ -28,7 +9,7 @@ Each user will have an account with a username and password that they can option
 
 To make this project possible, we (Abraiz and Dixit), implemented Javascript’s **three.js** library along with HTML and CSS on the front-end, and we made use of Node, Express, and NeDB on the back-end in order to send, receive, and store the Memory Cube’s data.
 
-Inspiration:
+## Inspiration:
 
 
 
@@ -38,14 +19,14 @@ Inspiration:
 * Provides a unique way to save memories, and to form a meaningful structure using those memories.
 * Users would have the ability to make their own personalized cube or collaborate on a cube with other people so that the final Memory Cube that forms holds memories associated with each person in the group. This way, the people in the group would have a unique, personalized cube that would be shared among them.
 
-Brainstorming:
+## Brainstorming:
 
 
 
 * Initially we thought about making the cube structure using triangles. The structure would be formed using the BufferGeometry feature in three.js. However, we soon realized that it was difficult to implement Raycasting on the triangles inside the Buffer cube since the triangles weren’t mesh objects. Moreover, we realized it was a bit difficult to interact with triangles since they were 2D objects. So, we decided not to proceed with the triangles-inside-a-larger-cube idea. **Triangle emoji**
 * We also thought of a “Memory Train” idea in which the individual memories would be placed in order such that the oldest ones would be found at the back end of the Train (which would be made of cubes) and the newest ones would be added to the front of the Train. We made a rough three.js implementation of it, but due to time constraints, we decided to keep our focus on the Memory Cube idea and proceeded to complete it first.
 
-Wireframes:
+## Wireframes:
 
 
 
@@ -89,7 +70,7 @@ The following is the ordered information flow of the NeDB implementation for the
 2. Client sends the image data (**memoryInfo**) and and mesh data (**meshInfo**) to the server 
 3. Server inserts both the image and mesh data into their respective databases.
 
-Features:
+## Features:
 
 
 
@@ -106,7 +87,7 @@ Features:
 * Ability to logout and return to the homescreen
 * Login feature - unique usernames and passwords, prompting the user upon entering a wrong password, and sending them back to the homescreen
 
-User Feedback:
+## User Feedback:
 
 
 
@@ -119,9 +100,9 @@ User Feedback:
 * Since we couldn’t overlay the button and slider divs on top of the canvas at first, some of our peers pointed out that the cursor’s intersection with the individual objects wasn’t perfectly aligned. 
     * We realized this was because the Raycaster worked based on the current windowWidth and windowHeight of the browser window. Adding divs separately made way for some scroll which interfered with the Raycaster’s width and height values for the canvas and so the pointer wasn’t properly aligned with the memory objects when the user was trying to hover over them. We found a fix for this issue and it is mentioned under the **Challenges** section.
 
-Key Challenges / Things We Learnt:
+## Key Challenges / Things We Learnt:
 
-Abraiz
+### Abraiz
 
 
 
@@ -137,13 +118,13 @@ Abraiz
     * The index of each element in the **objectlist** is perfectly aligned with its corresponding item in the **meshlist**. **(insert photo)**
     * When the Raycaster stores the mesh the user has clicked inside the **INTERSECTED** variable, the mesh’s index is retrieved from the **meshlist** and the corresponding object is retrieved from the same index from the **objectlist**, this object stores the image string and the description which are then used to display the image and text associated with that “memory object” to the user.
 
-Dixit
+### Dixit
 
 Initially, I thought of working on an individual project, such as bingo or connect 4 which would require the use of sockets and p5.js, both of which I had already used during my project 2 multiplayer game. With motivation from the professor as well as support from my friend Abraiz who had used three.js in one of his weekly assignments, I decided to abandon my initial ideas and go for the tech stack that comprises three.js on the front end and node.js, express, and nedb on the back end. My main inspiration for choosing this stack was that it was completely new for me in the sense that although I had played here and there with both three.js and nedb in the class, I had never included them in my previous projects for the course, so I thought this would be a great learning experience and a good overall use of the things I learned in the course. 
 
 The initial process for me was full of struggles as I learned how to navigate the three js library, including its inclusion in my script file. I started learning how various features in three js work, including different types of geometry, cameras, textures, and raycasting. I found that thinking in 3D is more challenging as well as fun than expected. Since Abraiz and I were not together on campus during the break, we started the project a little differently. While he started working on buffer geometry, I started working on textures and raycasting. This way we made sure that we could achieve all the features we wanted to achieve in our final project as we bring both of our implementations into one. For me personally, using nedb for database was a new element different from all of my previous projects, so the nedb documentation in the github ([https://github.com/louischatriot/nedb](https://github.com/louischatriot/nedb)) helped a lot, and in this process, I also realized that database designing and querying is something that I enjoy and is an important aspect of the back-end web. Besides the database and three.js, the other thing that I learned or maybe sort of revisioned through this project was the fundamental idea of get and post request we learned when we discussed APIS and fetching them in the first back-end class. Apart from this, designing the landing page’s banner and working with CSS positions was also equally rewarding. 
 
-Next Steps / More Ideas:
+## Next Steps / More Ideas:
 
 
 
@@ -157,7 +138,7 @@ Next Steps / More Ideas:
     * Users can have username and password for their own account and also have a “key” which would allow them to access the group cube.
 * Sounding a bit ambitious here but, the project could possibly be transformed into a VR experience where users would be able to interact with the cube in a more life-like experience, or it could also be represented in the form of an interactive-cube hologram displaying the photos as holograms when the individual cubes are touched. Very futuristic, but we thought it would be worth mentioning **emoji**
 
-References:
+## References:
 
 
 
